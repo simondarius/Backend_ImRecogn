@@ -88,4 +88,4 @@ License
 
 NutriVIsion is released under the MIT License.
 
-Elevate your application's capabilities with NutriVIsion's powerful food classification and nutrient information API. Turn images into nutritional insights effortlessly. For any queries, contact us at contact@nutrivisionapi.com or visit our website www.nutrivisionapi.com.
+
