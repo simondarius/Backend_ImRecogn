@@ -1,7 +1,5 @@
 NutriVIsion - Food Classification and Nutrient Information API
-<p align="center">
-  <img src="https://your-image-url.com/nutrivision_logo.png" alt="NutriVIsion Logo">
-</p>
+
 
 Welcome to NutriVIsion, an advanced food classification and nutrient information API powered by cutting-edge technology. This repository houses the backend server built using Python Flask, integrated with the powerful BiT-M Fine-Tuned Image Classification Model. NutriVIsion seamlessly analyzes images of various foods and provides comprehensive macronutrient information based on the identified food class.
 Table of Contents
