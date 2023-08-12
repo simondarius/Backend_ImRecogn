@@ -1,6 +1,7 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request
 from flask_cors import CORS
-
+from request_responses import get_response_from_Exception
+from Handlers import upload_handler,preflight_handler
 # ======= Config =======
 app=Flask(__name__)
 
@@ -14,28 +15,16 @@ CORS(app, resources={r"/*": {"origins": "*","allow_headers":"*","methods":"*"}})
 
 @app.route('/upload_image',methods=['POST','OPTIONS'])
 def upload_request():
-    print('ALIVE')
-    # ==== Handle image post request ====
     if request.method=='OPTIONS':
-        response = jsonify({'message': 'Preflight request successful'})
-        response.headers.add('Access-Control-Allow-Origin', '*')
-        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
-        response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-        print('responeded to OPTIONS method')
-        return response
-    elif request.method=='POST':
-        if request.is_json:
-           login_data=request.json
-
-           print('INCOMING POST METHOD!')
-           
-           return jsonify({'response':True})
-        else :
-           return jsonify({'response':'REQUEST NOT IN JSON FORMAT!'})
-    else: return jsonify({'response':'Invalid method, cannot respond to method of type '+request.method+' !'})       
+        return preflight_handler()
+    else:
+        try:
+            return upload_handler(request,app)
+        except Exception as e:
+            return get_response_from_Exception(e) 
 
 
 # ======= Main =======
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=True,host='0.0.0.0',port=5000)
     
