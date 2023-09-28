@@ -74,18 +74,8 @@ Classify Food
       }
     }
 
-Advanced Configuration
-Model Fine-Tuning
-
-NutriVIsion's classification accuracy can be further improved by fine-tuning the BiT-M model on a custom food dataset. Refer to the model_fine_tuning_guide.md for detailed instructions.
-Customization
-
-Tailor NutriVIsion to your specific needs by adjusting parameters in the config.py file. You can modify the confidence threshold for predictions, enable GPU support, and more.
 Contributing
 
-We welcome contributions from the open-source community. If you're interested in enhancing NutriVIsion, please read our contribution guidelines.
-License
-
-NutriVIsion is released under the MIT License.
+We welcome contributions from the open-source community. 
 
 
